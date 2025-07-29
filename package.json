@@ -1,0 +1,55 @@
+{
+  "name": "ts-template",
+  "version": "1.0.0",
+  "description": "A powerful TypeScript template for Node.js projects",
+  "main": "app.js",
+  "type": "commonjs",
+  "author": "summerlie",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sumlie/ts-template.git"
+  },
+  "homepage": "https://github.com/sumlie/ts-template",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx rimraf ./dist && tsc",
+    "start": "npm run build && cross-env NODE_ENV=prod node -r module-alias/register -r dotenv/config ./dist/app.js",
+    "dev": "cross-env NODE_ENV=dev nodemon",
+    "dev:silent": "cross-env NODE_ENV=dev nodemon --quiet",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "enhance": "npx npm-check-updates -u"
+  },
+  "dependencies": {
+    "@types/node": "^24.1.0",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@swc/core": "^1.13.3",
+    "@swc/helpers": "^0.5.17",
+    "@types/jest": "^30.0.0",
+    "@types/mocha": "^10.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^29.0.1",
+    "eslint-plugin-prettier": "^5.5.3",
+    "globals": "^16.3.0",
+    "jest": "^30.0.5",
+    "module-alias": "^2.2.3",
+    "nodemon": "^3.1.10",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "_moduleAliases": {
+    "@": "./dist"
+  }
+}
